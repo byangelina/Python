@@ -1,5 +1,60 @@
 
 
+# ENUNCIADO:
+# Se desea crear una empresa cuyo servicio es gestión de estacionamientos, para ello se ha modelado
+# el siguiente diagrama de clases
+
+
+# DATOS DE LA TABLA:
+# - Arriba = datos que tiene la clase (atributos).
+# - Abajo = acciones que puede hacer (métodos).
+
+"""
+DIAGRAMA DE CLASES
+
+Tipo 1 Vehiculo 0
+Estacionamiento 1 Vehiculo 0
+
+-------------------------
+|  Vehiculo             |
+|-----------------------|
+| - patente             |
+| - minutosEstacionado  |
+| - tipoVehiculo        |
+|-----------------------|
+| + totalPagar()        |
+| + mostrarDatos()      |
+-------------------------
+-------------------------
+|  Estacionamiento      |
+|-----------------------|
+| - codigo (get)        |
+| - direccion (get, set)|
+| - capacidad (get, set)|
+|-----------------------|
+| + entradaVehiculo()   |
+| + salidaVehiculo()    |
+| + disponibles()       |
+| + ocupados()          |
+| + obtenerPorTipo()    |
+| + Estacionamiento()   |
+| + Estacionamiento()   |
+-------------------------
+-------------------------
+|  Tipo                 |
+|-----------------------|
+| - ruedas (get, set)   |
+| - tipoVehiculo (get)  |
+| - valorMinuto (get)   |
+|-----------------------|
+| + totalPagar()        |
+| + mostrarDatos()      |
+-------------------------
+
+"""
+
+
+
 class Estacionamiento:
     def __init__(self,codigo,direccion,capacidad):
         self.__codigo = codigo
@@ -69,23 +124,41 @@ class Vehiculo:
 
 
 #clase heredada
-class Tipo(Vehiculo):
-    def __init__(self,ruedas,tipoVehiculo,valorMinuto):
+class Tipo:
+    def __init__(self,ruedas):
         self.__ruedas = ruedas
-        self.__tipoVehiculo = tipoVehiculo
-        self.__valorMinuto = valorMinuto
+        if ruedas == 2:
+            self.__tipoVehiculo = "Motocicleta"
+
+    lista_tipos = [[2, "Motocicleta", 300],[3, "Trimoto", 600],[4, "Automóvil", 900],[5, "Camión", 1500]]  # 5 para más de 4 ruedas
+
+    # por si no se encuentra el tipo
+    self.__tipoVehiculo = "Desconocido"
+    self.__valorMinuto = 0
+        
+    # Buscar tipo en la lista de forma sencilla
+    for tipo in lista_tipos:
+        ruedas_tipo = tipo[0]
+        nombre = tipo[1]
+        valor = tipo[2]
+            
+    if ruedas == ruedas_tipo or (ruedas > 4 and ruedas_tipo == 5):
+        self.__tipoVehiculo = nombre
+        self.__valorMinuto = valor
 
     @property
-    def ruedas(self): # Getter ruedas
+    def ruedas(self):
         return self.__ruedas
-    
-    @property # Getter tipoVehiculo
+
+    @property
     def tipoVehiculo(self):
         return self.__tipoVehiculo
 
-    @property # Getter valorMinuto
+    @property
     def valorMinuto(self):
-        return self.valorMinuto
+        return self.__valorMinuto
 
-    @ruedas.setter # Setter ruedas
-    def ruedas(self,ruedas):
+
+
+
+
