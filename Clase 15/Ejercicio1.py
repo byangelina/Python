@@ -77,7 +77,7 @@ class Estacionamiento:
 # ---- Setters ----
     @direccion.setter # Setter direccion
     def direccion(self,nuevaDireccion):
-        if isinstance(nuevaDireccion,str) and len(nuevaDireccion) >3: # valida que el valor sea un texto (str) y que tenga más de 3 caracteres
+        if isinstance(nuevaDireccion,str) and len(nuevaDireccion) >3: # valida que el valor sea un texto más de 3 caracteres
             self.__direccion = nuevaDireccion
         else:
             raise ValueError("La direccion debe ser válida (más de 3 caracteres).")
@@ -89,6 +89,17 @@ class Estacionamiento:
             self.__capacidad = nuevaCapacidad
         else:
             raise ValueError("La dirección debe ser mayor a 1.")
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -113,7 +124,6 @@ class Vehiculo:
         return self.__minutosEstacionado
 
 # ---- Setters ----
-
     @minutosEstacionado.setter
     def minutosEstacionado(self,nuevosMinutos):
         if isinstance(nuevosMinutos, int) and nuevosMinutos >=0:
@@ -122,39 +132,64 @@ class Vehiculo:
             raise ValueError("Los miuntos estacionados deben ser mayor a 0.")
 
 
+    def totalPagar(self):
+        tarifaPorMinuto = {
+            "Motocicleta": 30,
+            "Trimoto": 60,
+            "Automóvil": 90,
+            "N/A": 150
+        }
+
+
+
+  # def mostrarDatos(self):
+
+
+
+
+
+
+
+
+
+
+
 
 #clase heredada
-class Tipo:
-    def __init__(self,ruedas):
+class Tipo():
+    def __init__(self,ruedas,tipoVehiculo,valorMinuto):
         self.__ruedas = ruedas
         if ruedas == 2:
             self.__tipoVehiculo = "Motocicleta"
+        elif ruedas == 3:
+            self.__tipoVehiculo = "Trimoto"
+        elif ruedas == 4:
+            self.__tipoVehiculo = "Automóvil"
+        elif ruedas == 5:
+            raise ValueError ("Error, vehiculo no identificado (no puede tener 5 ruedas)")
+        elif ruedas == 6:
+            self.__tipoVehiculo = "Camión"
+        else:
+            raise ValueError("")
 
-    lista_tipos = [[2, "Motocicleta", 300],[3, "Trimoto", 600],[4, "Automóvil", 900],[5, "Camión", 1500]]  # 5 para más de 4 ruedas
-
-    # por si no se encuentra el tipo
-    self.__tipoVehiculo = "Desconocido"
-    self.__valorMinuto = 0
         
-    # Buscar tipo en la lista de forma sencilla
-    for tipo in lista_tipos:
-        ruedas_tipo = tipo[0]
-        nombre = tipo[1]
-        valor = tipo[2]
-            
-    if ruedas == ruedas_tipo or (ruedas > 4 and ruedas_tipo == 5):
-        self.__tipoVehiculo = nombre
-        self.__valorMinuto = valor
-
-    @property
+    @property # Getter ruedas
     def ruedas(self):
         return self.__ruedas
+      # raise self.__tipoVehiculo > 4
 
-    @property
+    @ruedas.setter
+    def ruedas(self,nuevasRuedas):
+        if isinstance(nuevasRuedas, int) and nuevasRuedas <= 6:
+            self.ruedas = nuevasRuedas
+        else:
+            raise ValueError("Error, el vehículo tiene más de 6 ruedas, vuelva a ingresar.")
+
+    @property # Getter tipoVehiculo
     def tipoVehiculo(self):
         return self.__tipoVehiculo
 
-    @property
+    @property # Getter valorMinuto
     def valorMinuto(self):
         return self.__valorMinuto
 
