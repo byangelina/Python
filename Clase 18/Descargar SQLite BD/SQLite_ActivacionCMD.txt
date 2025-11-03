@@ -1,0 +1,23 @@
+Microsoft Windows [Versión 10.0.26100.6899] (c) Microsoft Corporation. Todos los derechos reservados. C:\Users\Angur>sqlite3 SQLite version 3.50.4 2025-07-30 19:33:53 Enter ".help" for usage hints. Connected to a transient in-memory database. Use ".open FILENAME" to reopen on a persistent database. sqlite>
+// escribir sqlite3
+
+cd "C:\Users\Angur\OneDrive\Documentos\Contenido Inacap\P.O.O\Clase 18" 
+// escribir la ruta donde esta el archivo Python ya ejecutado (no tener abierto el Browser)
+
+
+python EjercicioBD1.py
+// escribir esto para ejecutar el código de Python
+
+
+Microsoft Windows [Versión 10.0.26100.6899] (c) Microsoft Corporation. Todos los derechos reservados. C:\Users\Angur>C:\Users\Angur\OneDrive\Documentos\Contenido Inacap\P.O.O\Clase 18 
+"C:\Users\Angur\OneDrive\Documentos\Contenido" no se reconoce como un comando interno o externo, programa o archivo por lotes ejecutable.
+
+C:\Users\Angur>cd "C:\Users\Angur\OneDrive\Documentos\Contenido Inacap\P.O.O\Clase 18"
+C:\Users\Angur\OneDrive\Documentos\Contenido Inacap\P.O.O\Clase 18>python EjercicioBD1.py 
+Conectando a la base de datos... Base de datos conectada y tabla creada...
+
+Registro ingresado...
+Fin del sistema. 
+
+C:\Users\Angur\OneDrive\Documentos\Contenido Inacap\P.O.O\Clase 18>
+// todo eso significa que Python corrió correctamente
