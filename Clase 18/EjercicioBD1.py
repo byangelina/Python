@@ -12,20 +12,16 @@ try: # para capturar el error
         c.execute("Create table if not exists Usuarios (id Intenger Primary Key, nombre Text)")
         conn.commit()
 
-
         print("Base de datos conectada y tabla creada...")
 
         #DML -> Manipulación de datos (Insert, Update, Delete, Select)
         c.execute("Insert into Usuarios (id, nombre) values (1, 'Juan Perez')")
         conn.commit()
 
-
         """
         # ejemplo, no hacer esto porque es complicado, pero se si se puede hacer bien, primero invertigar.
         for x in range(10,1000000):
             c.execute("Insert into Usuarios (id, nombre) values(" + str(x))"""
-
-
 
         # jflkdsjfkljfljksd <---- si tengo esto y da error, da el error en except,
         # pero tabién pasa por el "finally". 
@@ -38,18 +34,7 @@ finally:
     conn.close() # finally quiere decir que este paso se cumplirá si o si, el codigo pasa
     # por aqui si está correcto o si da error, caulquiera de las dos formas.
 
-
 print("Fin del sistema.")
-
-
-
-
-
-
-
-
-
-
 
 
 
