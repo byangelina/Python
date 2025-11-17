@@ -1,3 +1,6 @@
+# aprender a usar base64: caracteres que no tienen caracteres que no son universales
+
+
 # Ejemplo 1
 
 """
