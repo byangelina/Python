@@ -25,7 +25,7 @@ import rsa
 print("Clave pública: ", clave_publica)
 print("Clave privada: ", clave_privada)
 
-msj = "Hola inframundo"
+msj = "Hola inframundo" # esta es la clave o mensaje, direccion, etc.
 msj_byte = msj.encode('utf8')
 
 print("Mensaje en byte: ", msj_byte)
@@ -44,7 +44,7 @@ import rsa
 print("Clave pública: ", clave_publica)
 print("Clave privada: ", clave_privada)
 
-msj = "Hola inframundo"
+msj = "Hola inframundo" # esta es la clave o mensaje, direccion, etc.
 msj_byte = msj.encode('utf8')
 
 print("Mensaje en byte: ", msj_byte)
@@ -67,7 +67,7 @@ import rsa
 print("Clave pública: ", clave_publica)
 print("Clave privada: ", clave_privada)
 
-msj = "Hola inframundo"
+msj = "Hola inframundo" # esta es la clave o mensaje, direccion, etc.
 msj_byte = msj.encode('utf8')
 
 print("Mensaje en byte: ", msj_byte)
