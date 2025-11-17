@@ -80,7 +80,11 @@ print("Cifrado: ",msj_cifrado)
 msj_descifrado_byte = rsa.decrypt(msj_cifrado,clave_privada)
 msj_descifrado = msj_descifrado_byte.decode("utf8")
 
+
+print("---------------------------------Desencriptar")
 print("Decifrado: ", msj_descifrado)
+
+
 
 
 
