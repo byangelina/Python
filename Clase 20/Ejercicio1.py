@@ -49,8 +49,9 @@ def desencriptar(texto):
 # --- Crear tabla si no existe ---
 def crear_tabla():
     try:
-        with sqlite3.connect("Usuarios.db") as conn:
-            c = conn.cursor()
+        with sqlite3.connect("Usuarios.db") as conn: # connect() abre el archivo .db
+            # with garantiza que si algo falla, Python cierre todo igual
+            c = conn.cursor() # cursor() permite escribir/leer
             c.execute("""
                 CREATE TABLE IF NOT EXISTS Usuarios (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -58,8 +59,8 @@ def crear_tabla():
                     clave TEXT,
                     perfil TEXT
                 )
-            """)
-            conn.commit()
+            """) # execute() ejecuta comandos SQL
+            conn.commit() # commit() guarda los cambios
         print("Tabla 'Usuarios' lista.")
     except sqlite3.Error as e:
         print("Error al crear la tabla:", e)
