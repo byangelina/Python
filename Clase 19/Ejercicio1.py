@@ -13,13 +13,10 @@ def encriptar(mensaje): # define una función que recibe un texto
 
         mensajeEncriptadojejeje += nuevoCaracter # va construyendo el mensaje letra por letra.
 
-
-
 # Esta función hace lo contrario de encriptar...
 # Resta 5 en vez de sumar 5. Así, recupera el mensaje original.
 # Si el mensaje encriptado es "Mtqf",
 # cada letra retrocede 5 lugares en la tabla de caracteres, y vuelve a ser "Hola"
-
 
 def desencriptar(mensaje):
     mensajedesEncriptado = ""
@@ -30,5 +27,44 @@ def desencriptar(mensaje):
 
     return mensajedesEncriptado
 
-
 print(desencriptar("Mtqf%hthmnstsf"))
+
+
+
+
+# Ejemplo 2
+
+mensajes = ["hola", "como", "estan"]
+
+def encriptar(msj):
+    mensajeEncriptado = ""
+
+for caracter in msj:
+    asciiCaracter = ord(caracter) + 5
+    mensajeEncriptado += chr(asciiCaracter)
+
+    return mensajeEncriptado
+
+for e in mensajes:
+    print(encriptar(e))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
