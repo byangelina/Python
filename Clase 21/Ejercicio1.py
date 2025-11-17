@@ -41,4 +41,30 @@ msj_descifrado = rsa.decrypt(msj_cifrado,clave_privada)
 
 
 
+# Ejemplo 3
+
+import rsa
+
+(clave_publica, clave_privada) = rsa.newkeys(512)
+
+print("Clave pública: ", clave_publica)
+print("Clave privada: ", clave_privada)
+
+msj = "Hola inframundo"
+msj_byte = msj.encode('utf8')
+
+print("Mensaje en byte: ", msj_byte)
+
+msj_cifrado = rsa.encrypt(msj_byte, clave_publica)
+
+print("---------------------------------Encriptado")
+print("Cifrado: ",msj_cifrado)
+
+msj_descifrado_byte = rsa.decrypt(msj_cifrado,clave_privada)
+msj_descifrado = msj_descifrado_byte.decode("utf8")
+
+print("Decifrado: ", msj_descifrado)
+
+
+
 
