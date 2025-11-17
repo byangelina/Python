@@ -1,6 +1,12 @@
 
 # TAREA
 # Crear un CRUD de usuarios que se conecte a una base de datos SQLite
+"""
+• Create → crear
+• Read → leer/buscar
+• Update → actualizar
+• Delete → eliminar
+"""
 
 # Ejercicio de la pizarra (crear usuario, eliminar, actualizar, buscar, salir) debe hacerse guardando los datos
 # en una tabla llamada Usuarios, con encriptación básica para el correo y la clave.
