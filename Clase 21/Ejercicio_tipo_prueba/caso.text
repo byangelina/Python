@@ -1,1 +1,72 @@
+Sistema de Gestión de Inventario “TecnoMarket”
 
+La empresa TecnoMarket, una tienda que vende productos tecnológicos, necesita un pequeño sistema de inventario para uso interno.
+El sistema debe ejecutarse por consola y permitir controlar productos, validar accesos y administrar una pequeña base de datos local.
+El desarrollador anterior dejó el sistema “a medias”, así que ahora la misión es implementar las funciones faltantes y dejar todo funcionando.
+
+📌 Requerimientos del sistema
+
+Tu programa debe cumplir los siguientes puntos:
+1. Estructura del proyecto
+
+Debes crear los siguientes archivos:
+main.py → ejecuta el menú principal
+db.py → conexión SQLite + creación de tabla
+producto.py → clase Producto
+crud.py → funciones insertar / actualizar / eliminar / buscar
+seguridad.py → validación simple (password en duro o encriptación básica)
+
+2. Funcionalidades obligatorias
+Al iniciar el programa debe pedir un “código de acceso” para entrar al sistema.
+Puedes validarlo directamente con un string fijo o con encriptación simple (ord/chr).
+
+Menú principal
+El sistema debe mostrar exactamente esto:
+Seleccione opción
+Opción invalida
+
+Menu de productos 
+1. Ingresar producto
+2. Modificar producto
+3. Eliminar producto
+4. Buscar por código
+5. Buscar por descripción
+6. Listar inventario 
+7. Salir 
+Seleccione opción 
+
+3. Base de datos
+Debes crear una base de datos SQLite llamada:
+inventario.db
+Con una tabla:
+
+CREATE TABLE productos (
+    codigo TEXT PRIMARY KEY,
+    descripcion TEXT,
+    precio INTEGER,
+    stock INTEGER
+)
+
+4. Operaciones CRUD
+Ingresar producto
+Pide:
+código
+descripción
+precio
+stock
+Inserta en la tabla.
+Modificar producto
+
+Permite cambiar:
+descripción
+precio
+stock
+Según el código del producto.
+Eliminar producto
+Recibe el código y elimina el registro.
+Buscar por código
+Busca coincidencia exacta.
+Buscar por descripción
+Debe buscar usando LIKE '%texto%'.
+Listar inventario
+Debe mostrar todos los productos registrados.
